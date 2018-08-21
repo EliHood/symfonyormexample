@@ -79,7 +79,7 @@ class ProductController extends AbstractController
       $product = new Product();
       $product->setName($request->get('title'));
       $product->setPrice($request->get('price'));
-      $product->setDescription($request->get('description'));
+      $product->setDescription(strip_tags($request->get('description')));
 
       $product->setCategory($category);
 
