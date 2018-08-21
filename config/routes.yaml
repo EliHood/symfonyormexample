@@ -1,0 +1,46 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+blog:
+  path: /blog
+  controller: App\Controller\BlogController::list
+
+
+blog_show:
+  path: /blog/{slug}
+  controller: App\Controller\BlogController::show
+
+
+product:
+  path: /products
+  controller:  App\Controller\ProductController::index
+
+product_show:
+  path: /product/{id}
+  controller:  App\Controller\ProductController::show
+
+product_new:
+  path: /product_new
+  controller: App\Controller\ProductController::product_new
+
+create_product:
+  path: /product_create
+  controller: App\Controller\ProductController::create
+
+login:
+    path: /login
+    controller: App\Controller\UserController::login
+
+
+delete_product:
+  path: /product/delete/{id}
+  controller: App\Controller\ProductController::delete
+
+register:
+  path: /register
+  controller: App\Controller\UserController::index
+
+signup:
+  path: /signup
+  controller: App\Controller\UserController::signup

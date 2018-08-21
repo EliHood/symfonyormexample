@@ -1,0 +1,45 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+    providers:
+        user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+    access_control:
+        - { path: ^/user, roles: ROLE_USER }
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            provider: user_provider
+            form_login:
+                login_path: login
+                check_path: login
+                username_parameter: _username
+                password_parameter: _password
+                always_use_default_target_path: false
+                default_target_path: /products
+                target_path_parameter: _target_path
+                use_referer: false
+                post_only: true
+                remember_me: false
+                require_previous_session: false
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~

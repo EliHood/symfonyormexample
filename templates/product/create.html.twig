@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Create Product</h1>
+
+    <form action="/product_create" method="POST">
+	  <div class="form-group">
+	    <label for="exampleInputEmail1">Enter Product Title</label>
+	    <input type="text" name="title" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter Title">
+	  </div>
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Enter Price</label>
+	    <input type="text" name="price" class="form-control" id="" placeholder="Enter Price">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="exampleInputPassword1">Enter Category</label>
+	    <input type="text" name="category" class="form-control" id="" placeholder="Enter Category">
+	  </div>
+
+	  <div class="form-group">
+	    <label for="exampleFormControlTextarea1">Enter Description</label>
+	    <textarea name="description" class="form-control" id="" rows="3"></textarea>
+	  </div>
+	  <button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+
+
+</div>
+{% endblock %}
