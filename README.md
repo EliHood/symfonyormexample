@@ -1,5 +1,7 @@
 # symfonyormexample
 
+### please delete all files in src/migrations before excuting the instructions.
+
 ## Instructions
 
 1. `git clone`
