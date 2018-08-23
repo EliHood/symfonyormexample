@@ -10,6 +10,7 @@
 4. `php bin/console doctrine:migrations:diff`
 5. `php bin/console doctrine:migrations:migrate`
 6. `yarn install`
+7. `yarn encore dev`
 
 
 
